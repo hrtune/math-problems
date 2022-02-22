@@ -1,0 +1,126 @@
+\documentclass{article}
+\begin{document}
+\section*{Problem Set 1}
+
+\subsection*{Problem 1}
+Prove that $\log_4{6}$ is irrational.
+
+\noindent
+Proof: \\
+I'm going to prove the proposition with contradiction. Suppose it can be expressed as a fraction $m/n$, where m and n are integers. Then,
+\[ log_4{6} = {m \over n} \]
+(use a definition of log)
+\[ 4^{m / n} = 6 \]
+iff
+\[ 4^m = 6^n \]
+iff
+\[ 2^{2m} = 2^n3^n \]
+iff
+\[ 2^{2m-1} = 3^n \]
+$2^k$ ($k=2m-1$) always produces an even number and $3^n$ always produces an odd number if $m$ and $n$ are integers. Because $m$ and $n$ are both integers, there is no such numbers satisfy the above equation.
+By the contradiction, $\log_4{6}$ is irrational. QED
+
+\subsection*{Problem 2}
+Use the Well Ordering Principle to prove that
+\begin{equation}
+n \le 3^{n/3}
+\end{equation}
+for every integer n.
+
+\noindent
+Proof: \\
+By contradiction. So I will prove an equation\dots
+\begin{equation}
+    n > 3^{n/3}
+\end{equation}
+By explicit calculation, the equation holds for $0 \le n \le 4$. By WOP, there is smallest value $c$ in the set $C$, which is\dots
+\[ C = \{ n \thinspace | \thinspace n > 3^{n/3} \} \]
+The value $c-3$ holds for (1) when $c>4$ so,
+\[ (c-3) \le 3^{(c-3)/3} \]
+iff
+\[ 3(c-3) \le 3^{c/3} \]
+$c < 3(c-3)$ holds for $c \ge 5$ because of its linearity so,
+\[ c < 3(c-3) \le 3^{c/3}\]
+iff
+\[ c < 3^{c/3} \]
+which contradicts (2). QED
+
+\subsection*{Problem 3}
+(a) Verify by truth table that 
+\begin{equation}
+    (\mathbf{P} \ IMPLIES\ \mathbf{Q} )\ OR\ (\mathbf{Q} \ IMPLIES\ \mathbf{P})
+\end{equation}
+is valid.
+For the validity of (3), I made a truth table.
+
+\begin{table}[h]
+    \begin{tabular}{llll}
+    P & Q & (1) &  \\ \hline
+    T & T & T   &  \\
+    T & F & T   &  \\
+    F & T & T   &  \\
+    F & F & T   & 
+    \end{tabular}
+\end{table}
+Thus, the predicate (3) is valid. \\
+\\
+(b) Let P and Q be propositional formulas. Describe a single formula, R, using only AND's, OR's, NOT's,
+and copies of P and Q, such that R is valid iff P and Q are equivalent. \\
+\\
+For equivalence of P and Q, R would be
+\begin{equation}
+    P\ \Leftrightarrow \ Q
+\end{equation}
+If P and Q are equivalent, (4) is valid. However I should satisfy the constraint. So (4) iff,
+\begin{equation}
+    NOT(P\ XOR\ Q)
+\end{equation}
+iff
+\begin{equation}
+    NOT(NOT(P\ AND\ Q)\ AND\ (P\ OR\ Q))
+\end{equation}
+by applying De Morgan's,
+\begin{equation}
+    (A\ AND\ B)\ OR\ NOT(A\ OR\ B)
+\end{equation}
+(7) is the R, which is valid iff P and Q are equivalent.\\
+\\
+(c) Explain why\\
+P is valid  $iff$  NOT(P) is not satisfiable.\\
+\\
+If P is valid then NOT(P) is always false. So NOT(P) is not satisfiable.\\
+If NOT(P) is not satisfiable, then NOT(P) is always false, so P is always true which means valid.\\
+\\
+(d) Write a formula, S, so that the set $P = P_1,\cdots,P_k$ is not consistent iff S is valid.\\
+\\
+P is consistent iff there's an environment s.t. all elements of P is true.
+So, P is not consistent iff $P_1 \land P_2 \land \cdots \land P_{k-1} \land P_k$ is always false.
+In order to make above formula always true, simply take NOT of it, which is S.
+\[S = NOT(P_1 \land P_2 \land \cdots \land P_{k-1} \land P_k)\]
+\\
+\subsection*{Problem 4}
+Parallel half adder\\
+\\
+(a) A 1-bit add1 module.\\
+\begin{equation}
+    p_0 = \overline{a_0}
+\end{equation}
+\begin{equation}
+    c = a_0
+\end{equation}
+
+(b) Explain how to build an (n + 1)-bit parallel half-adder from an (n+1)-bit add1 module by writing a
+propositional formula for the half-adder output, $o_i$ , using only the variables $a_i$ , $p_i$ , and $c_{i-1}$\\
+\[ o_i = c_{i-1}\ XOR\ p_i \]
+
+(c) Write a formula for the carry, c, in terms of c(1) and c(2).\\
+If all bits are 1 then c will be 1. Otherwise, c is 0.
+\[c = c_{(1)}\ \land \ c_{(2)}\] so as to satisfy it.\\
+\\
+(d) \\
+If $c_{(1)} = 0$ then $p_i$ should be $a_i$, because no overflow occured.
+If $c_{(1)} = 1$ then $p_i$ should be $r_{i-(n+1)}$ because of the overflow.
+So,
+\[p_i =  (\overline{c_{(1)}}\ AND\ a_i)\ OR\ (c_{(1)}\ AND\ r_{i-(n+1)}) \]
+\end{document}
+

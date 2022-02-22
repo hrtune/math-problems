@@ -1,0 +1,28 @@
+\documentclass{article}
+\begin{document}
+\section*{Problem Set 2}
+
+\subsection*{Problem 1}
+
+(a) Explain how to write a formula Members(p,a,b) of set theory that means p = \{a,b\}
+\[ Members(p,a,b) ::= \forall z.(z=a\ OR\ z=b) \]
+\\
+(b)
+\[ Pair(p,a,b) ::= \forall z.(z = a\ OR \ z=Members(p,a,b)) \]
+(c)\\
+Prove
+\[ z \in \overline{A \cap B} = z \in \overline{A} \cup \overline{B} \]
+From the right side,
+\[ z \in \overline{A} \cup \overline{B} \]
+iff
+\[ (z\in \overline{A})\ OR\ (z \in \overline{B}) \]
+iff
+\[ \overline{(z \in A)\ AND \ (z \in B)} \]
+(By De Morgan's law)\\
+iff
+\[ z \in \overline{A \cap B} \]
+which is the left side.
+
+\subsection*{Problem 2}
+
+\end{document}
