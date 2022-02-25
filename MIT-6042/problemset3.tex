@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+\section*{Problem Set 3}
+
+\subsection*{Problem 1}
+
+\noindent
+Given the Fibonacci number $F_n$ is its n-th term, prove
+\begin{equation}
+    F_n = \frac{p^n - q^n}{\sqrt{5}}
+\end{equation}
+where,
+\begin{align}
+    p &= \frac{1+\sqrt{5}}{2}\\
+    q &= \frac{1-\sqrt{5}}{2}
+\end{align}
+
+\noindent
+Proof by strong induction.\\
+First, the base case $F_0$ and $F_1$ must be verified.
+\begin{align*}
+    F_0 &= \frac{p^0 - q^0}{\sqrt{5}}\\
+        &= \frac{1 - 1}{\sqrt{5}}\\
+        &= 0\\
+        \\
+    F_1 &= \frac{p^1 - q^1}{\sqrt{5}}\\
+        &= \frac{ (\frac{1+\sqrt{5}}{2}) - (\frac{1-\sqrt{5} }{2})}{\sqrt{5}}\\
+        &= \frac{\frac{2\sqrt{5}}{2}}{\sqrt{5}}\\
+        &= 1\\
+\end{align*}
+Suppose $F_0,F_1,\ldots,F_n$ is true. Then $F_{n+1}$ must be true.
+\begin{align*}
+    F_{n+1} &= F_n + F_{n-1}\\
+            &= \frac{p^n - q^n}{\sqrt{5}} + \frac{p^{n-1} - q^{n-1}}{\sqrt{5}}\\
+            &= \frac{p^n(1+p^{-1}) - (q^n(1+q^{-1}))}{\sqrt{5}}\\
+            &= \frac{p^n \cdot p - q^n \cdot q}{\sqrt{5}}\\
+            &= \frac{p^{n+1} - q^{n+1}}{\sqrt{5}}\\
+\end{align*}
+So, (1) holds for all $n \in \mathbb{N}$. QED
+
+\subsection*{Problem 2}
+
+\subsection*{Problem 3}
+\begin{align*}
+    f &: A \rightarrow B\\
+    g &: B \rightarrow C\\
+    h &: A \rightarrow C\\
+\end{align*}
+($f$ and $g$ are both functions.)\\
+\smallskip
+(a) If h is surjective, then f must be surjective.\\
+If h is surjective,
+\begin{equation}
+    (\#arrows\ of\ f) \ge |C|
+\end{equation}
+is true. Because f is function,
+\begin{equation}
+    |B| \ge (\#arrows\ of\ f)
+\end{equation}
+is also true. Then f must be surjective function. $\square$\\ 
+(b) If h is surjective, then g must be surjective.\\
+If g is injective function, still holds the lefthand side of the proposition. By the contradiction, it is false.\\
+(c) If h is injective, then f must be injective.\\
+If h is injective,\\
+\begin{equation}
+    (\#arrows\ of \ f) \le |C|
+\end{equation}
+iff f is injective. (c) is true.\\
+(d) If h is injective and f is total, then g must be injective.\\
+
+
+\end{document}
