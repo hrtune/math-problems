@@ -1,0 +1,34 @@
+
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" asyncv src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<h1>Problem Set 4</h1>
+<p>https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/assignments/MIT6_042JS15_ps4.pdf</p>
+<h3>Problem 1</h3>
+<p>Suppose $(m,n)$ shows the current position of the robot.
+And the defined transitions of the robot are:
+$$ {(m, n) \rightarrow (m \pm 1, n \pm 3) | m,n \in \Z} $$(1)
+$$ {(m, n) \rightarrow (m \pm 2, n \mp 1) | m,n \in \Z} $$(2)</p>
+<p><strong>Lemma 4.1.1</strong> The preserved invariant of the state machine is
+$$ {(a-b, 3a+2b) | a,b \in \Z} $$(3)</p>
+<p>Base case: for the initial state,
+$$a-b = 0\ AND\ 3a+2b = 0$$
+iff  $a = 0$ and $b = 0$ so (3) holds for the base case.</p>
+<p>Inductive step: suppose (3) holds for $(m, n)$. So,</p>
+<ul>
+<li>$a-b = m$</li>
+<li>$3a+2b = n$
+iff
+$$ a = \frac{2m+n}{4} , b = \frac{-3m+n}{5} $$ (4)</li>
+</ul>
+<p>The next step will be (1) or (2). For (1),
+$$ a =</p>
